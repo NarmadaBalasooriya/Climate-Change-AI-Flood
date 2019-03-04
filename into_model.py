@@ -5,7 +5,7 @@ from options.test_options import TestOptions
 
 import shutil
 
-def check_model(search_loc):
+def check_model(search_loc, google_api_key):
 
 	opt = TestOptions().parse()
 
@@ -15,7 +15,7 @@ def check_model(search_loc):
 	if os.path.isdir(place_addr):
 		print('File exists')
 	else:
-		real_img_path = get_google_streetview(place_addr)
+		real_img_path = get_google_streetview(place_addr, google_api_key)
 		print('Saved google street view images of %s to %s' %(place_addr, real_img_path))
 
 		fake_img_path = save_cyclegan_images(opt, place_addr, opt.aspect_ratio)
