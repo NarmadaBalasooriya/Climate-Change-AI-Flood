@@ -3,9 +3,7 @@ from googlegeocoder import GoogleGeocoder
 import google_streetview.api
 
 
-google_key = "AIzaSyBDc5jaJG0k0o1k1NHoinwU7E89AMujmso"
-
-def get_google_streetview(addr):
+def get_google_streetview(addr, google_key):
 
 	geocoder = GoogleGeocoder(google_key)
 	location = geocoder.get(addr)
