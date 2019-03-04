@@ -5,6 +5,7 @@ from flask import Flask, request, render_template, send_from_directory
 from into_model import check_model
 
 __author__ = 'narmada'
+google_api_key = <your street view api key>
 
 app = Flask(__name__)
 
@@ -21,7 +22,7 @@ def search():
     search_text = request.form['search_place']
     print('search text: ', search_text)
 
-    check_model(search_text)
+    check_model(search_text, google_api_key)
 
     dst = './images'
     fake_imgs = []
