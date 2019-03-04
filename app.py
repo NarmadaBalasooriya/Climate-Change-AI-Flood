@@ -35,13 +35,6 @@ def search():
             if 'gsv' in file:
                 real_imgs.append(file)
 
-
-    #search_loc = os.path.join(search_text, 'real')
-    #generated_loc = os.path.join(search_text, 'fake')
-
-    #real_imgs = os.listdir(os.path.join(search_text, 'real'))
-    #fake_imgs = os.listdir(generated_loc)
-
     return render_template("search.html", image_names=real_imgs, fake_images=fake_imgs, location=search_text)
 
 
