@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<title>Climate Change AI</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+
+<form id="get_place" action="{{ url_for('search') }}" method="POST">
+    Search a place: <input type="text" name="search_place" value="">
+    <input type="submit" value="Search">
+    <br>
+</form>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h2 class="page-header">Climate Change AI</h2>
+        </div>
+        <div class="col-xs-6 col-sm-6" style="background-color:lavender;">
+            Real Street View Images of {{location}}
+            <hr>
+            {% for image_name in image_names %}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <img class="img-responsive" src=" {{url_for('send_image_real', filename=image_name)}}">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-xs-6 col-sm-6" style="background-color:lavenderblush;">
+            Generated Street View Images of {{location}}
+            <hr>
+
+            {% for image in fake_images %}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <img class="img-responsive" src=" {{url_for('send_image_fake', filename=image)}}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+
+</body>
+<script>
+
+    $("#file-picker").change(function(){
+
+        var input = document.getElementById('file-picker');
+
+        for (var i=0; i<input.files.length; i++)
+        {
+        //koala.jpg, koala.JPG substring(index) lastIndexOf('a') koala.1.jpg
+            var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+
+            if ((ext == 'jpg') || (ext == 'png'))
+            {
+                $("#msg").text("Files are supported")
+            }
+            else
+            {
+                $("#msg").text("Files are NOT supported")
+                document.getElementById("file-picker").value ="";
+            }
+
+        }
+
+
+    } );
+
+</script>
+</html>
