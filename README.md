@@ -1,6 +1,6 @@
 # Climate-Change-AI-Flood
 
-This is a part of the project on Cycle-GAN implementation to visualize the effects of climate change which is initiated by Prof.Yoshua Bengio of MILA, Canada (https://mila.quebec/en/person/bengio-yoshua/). Here we use a pretrained CycleGAN model using PyTorch to generate floods on street view images and display the results using a Python-based web application. 
+This is a part of the project on Cycle-GAN implementation to visualize the effects of climate change which is initiated by Prof.Yoshua Bengio of MILA, Canada (https://mila.quebec/en/person/bengio-yoshua/) and Jennifer Chayes of Microsoft Research(https://www.microsoft.com/en-us/research/people/jchayes/). Here we use a pretrained CycleGAN model using PyTorch to generate floods on street view images and display the results using a Python-based web application. 
 
 ## CycleGAN 
 
