@@ -44,7 +44,7 @@ $python app.py
 -To view the web application - Use http://127.0.0.1:4555
 
 ## Acknowledgements 
-The project is initiated by Prof.Yoshua Bengio and his CCAI(Climate Change AI) team.
+The project is initiated by Prof.Yoshua Bengio, his CCAI(Climate Change AI) team and Jennifer Chayes of MSR(Microsoft Research).
 CCAI team - Sasha Luccioni (https://sashaluccioni.weebly.com/)
             Kris Sankaran (http://krisrs1128.github.io/personal-site/)
             Victor Schmidt (https://mila.quebec/en/person/vict0rsch/)
